@@ -55,13 +55,14 @@ def git_push(commit_message: str, files_to_push: list[str]=[], files_to_remove: 
         print("Не удалось открыть репозиторий.")
 
 public_files = ['public_push.py'] + get_public_pages()
-print(get_remote_files(
+remote_files = get_remote_files(
     public_files,
     get_old_public_files()
-))
+)
 
 git_push(
     'Коммит первых файлов',
-    public_files
+    public_files,
+    remote_files
 )
 
