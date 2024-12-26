@@ -11,17 +11,17 @@ public:: true
 - #[[os python]]
 - #[[sys python]]
 - #[[re]]
-- [[numpy]]
-- [[vk_api]]
-- [[requests]]
-- [[urllib]]
-- [[json]]
-- [[random]]
-- [[scipy]]
-- [[math]]
-- [[git(python)]]
-- [[zipfile]]
-- [[Отправка сообщений на python]]
+- #[[numpy]]
+- #[[vk_api]]
+- #[[requests]]
+- #[[urllib]]
+- #[[json]]
+- #[[random]]
+- #[[scipy]]
+- #[[math]]
+- #[[git(python)]]
+- #[[zipfile]]
+- #[[Отправка сообщений на python]]
 -
 - ## API
   
@@ -29,10 +29,10 @@ public:: true
   
   **Токен** — это уникальная последовательность символов, позволяющая авторизоваться на сайте и работать с API
 -
-- [[Google doc API]]
-- [[VK]]
-- [[Яндекс метрики]]
-- [[Telegram]]
+- #[[Google doc API]]
+- #[[VK]]
+- #[[Яндекс метрики]]
+- #[[Telegram]]
 -
 - ### Стандартные функции
   
