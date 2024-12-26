@@ -38,7 +38,7 @@ def get_assets_public(public_pages: list[str]) -> list[str]:
         with open(Path(BASE_DIR, file), 'r') as f:
             for line in f.readlines():
                 if '!' in line and 'assets' in line:
-                    print(re.search(r'assets\/[^)]+', line))
+                    print(re.findall(r'assets\/[^)]+', line))
     return []
     
 
