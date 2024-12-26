@@ -33,7 +33,9 @@ def get_public_pages():
     return public_notes
 
 def get_assets_public(public_pages: list[str]) -> list[str]:
-    ...
+    for file in public_pages:
+        print(Path(BASE_DIR, file))
+    return []
     
 
 def git_push(commit_message: str, files_to_push: list[str]=[], files_to_remove: list[str]=[]):
@@ -60,7 +62,11 @@ def git_push(commit_message: str, files_to_push: list[str]=[], files_to_remove: 
     else:
         print("Не удалось открыть репозиторий.")
 
-public_files = ['public_push.py'] + get_public_pages()
+public_pages = get_public_pages()
+public_assets = get_assets_public(public_pages)
+public_files = ['public_push.py'] + public_pages + public_assets
+
+
 remote_files = get_remote_files(
     public_files,
     get_old_public_files()
