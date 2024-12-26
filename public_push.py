@@ -36,7 +36,8 @@ def get_assets_public(public_pages: list[str]) -> list[str]:
     for file in public_pages:
         with open(Path(BASE_DIR, file), 'r') as f:
             for line in f.readlines():
-                print(line)
+                if '!' in line:
+                    print(line)
     return []
     
 
