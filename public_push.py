@@ -34,7 +34,9 @@ def get_public_pages():
 
 def get_assets_public(public_pages: list[str]) -> list[str]:
     for file in public_pages:
-        print(Path(BASE_DIR, file))
+        with open(Path(BASE_DIR, file), 'r') as f:
+            for line in f.readlines():
+                print(line)
     return []
     
 
