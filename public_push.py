@@ -32,6 +32,10 @@ def get_public_pages():
 
     return public_notes
 
+def get_assets_public(public_pages: list[str]) -> list[str]:
+    ...
+    
+
 def git_push(commit_message: str, files_to_push: list[str]=[], files_to_remove: list[str]=[]):
     # Открываем репозиторий
     repo = Repo(BASE_DIR)
