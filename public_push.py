@@ -35,14 +35,13 @@ def get_public_pages():
 def git_push(commit_message: str, files_to_push: list[str]=[], files_to_remove: list[str]=[]):
     # Открываем репозиторий
     repo = Repo(BASE_DIR)
-
     # Проверяем, что это действительно репозиторий
     if not repo.bare:
         try:
             if len(files_to_push) > 0:
                 repo.index.add(files_to_push)
             if len(files_to_remove) > 0:
-                epo.index.remove(files_to_remove)
+                repo.index.remove(files_to_remove)
             if len(files_to_push) == 0 and len(files_to_remove) == 0:
                 print('Нет файлов для изменения')
                 exit()
