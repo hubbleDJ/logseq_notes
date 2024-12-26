@@ -69,7 +69,7 @@ def git_push(commit_message: str, files_to_push: list[str]=[], files_to_remove: 
 
 public_pages = get_public_pages()
 public_assets = get_assets_public(public_pages)
-public_files = ['public_push.py'] + public_pages + public_assets
+public_files = ['public_push.py', 'public_files.json'] + public_pages + public_assets
 
 
 remote_files = get_remote_files(
