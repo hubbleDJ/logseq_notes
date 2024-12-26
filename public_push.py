@@ -13,6 +13,9 @@ def get_old_public_files():
     with open(PUBLIC_FILES_PATH, 'r') as f:
         return json.load(f)
 
+def update_public_files(new_public_files: list[str]) -> None:
+    with open(PUBLIC_FILES_PATH, 'w', encoding='utf-8') as wf:
+        json.dump(new_public_files, wf, ensure_ascii=False, indent=4)
 
 def get_remote_files(new_public_files: list[str], old_public_files: list[str]):
     return list(set(old_public_files) - set(new_public_files))
@@ -59,6 +62,8 @@ remote_files = get_remote_files(
     public_files,
     get_old_public_files()
 )
+
+update_public_files(public_files)
 
 git_push(
     'Коммит первых файлов',
