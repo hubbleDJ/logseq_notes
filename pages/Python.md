@@ -214,42 +214,42 @@ public:: true
 	  
 	  ```python
 	  if x > 1:
-	  print('x больше 1')
+	  	print('x больше 1')
 	  elif x < 1:
-	  print('x меньше 1')
+	  	print('x меньше 1')
 	  else:
-	  print('x равен 1')
+	  	print('x равен 1')
 	  ```
 - ### Циклы
 	- Цикл while
 	  ```python
 	  while True:
-	  print('Бесконечный цикл')
+	  	print('Бесконечный цикл')
 	  else:
-	  print('Блок выполнится после окончания цикла')
+	  	print('Блок выполнится после окончания цикла')
 	  ```
 	  
 	  Цикл for
 	  ```python
 	  for index in range(0, 10, 1):
-	  print(index)
+	  	print(index)
 	  else:
-	  print('Блок выполнится после окончания цикла')
+	  	print('Блок выполнится после окончания цикла')
 	  
 	  for value in [1, 2, 3, 4]:
-	  print(value + 1)
+	  	print(value + 1)
 	  ```
 	  
 	  Перебор сразу нескольких списков(или других коллекций)
 	  ```python
 	  for value_list_1, value_list_2 in zip(list_1, list_2):
-	    print(value_list_1, value_list_2)
+	  	print(value_list_1, value_list_2)
 	  ```
 - ## Функции
 	- Типичная функция
 	  ```python
 	  def func_name(arg_1: int, arg_n: str='default value') -> str:
-	  return 'Возвращаемое значение'
+	  	return 'Возвращаемое значение'
 	  
 	  print(func_name('lol', 1))
 	  ```
@@ -261,14 +261,14 @@ public:: true
 	  
 	  func(1, 2, 3, 4, 5, fruits=5, god=20)
 	  '''
-	  Функция примет параметры в формате:
-	  params_tuple = (1, 2, 3, 4, 5)
-	  params_dict = {
-	  'fruits': 5,
-	  'god': 20
-	  }
-	  То есть все, принимает функция без названия парметра попадет в кортеж со *
-	  А, все, что с названием параметра в словарь с **
+	    Функция примет параметры в формате:
+	    	params_tuple = (1, 2, 3, 4, 5)
+	    	params_dict = {
+	    		'fruits': 5,
+	    		'god': 20
+	    	}
+	    То есть все, принимает функция без названия парметра попадет в кортеж со *
+	    А, все, что с названием параметра в словарь с **
 	  '''
 	  ```
 	  
