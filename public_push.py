@@ -1,4 +1,5 @@
 import os
+import json
 
 from git import Repo
 from pathlib import Path
@@ -6,6 +7,16 @@ from pathlib import Path
 BASE_DIR = Path(Path(__file__).resolve().parent)
 PAGES_DIR = Path(BASE_DIR, 'pages')
 ASSETS_DIR = Path(BASE_DIR, 'assets')
+PUBLIC_FILES_PATH = Path(BASE_DIR, 'public_files.json')
+
+def get_old_public_files():
+    with open(PUBLIC_FILES_PATH, 'r') as f:
+        return json.load(f)
+
+
+def get_remote_files(new_public_files: list[str], old_public_files: list[str]):
+    return list(set(old_public_files) - set(new_public_files))
+
 
 def get_public_pages():
     public_notes = []
@@ -44,6 +55,10 @@ def git_push(commit_message: str, files_to_push: list[str]=[], files_to_remove: 
         print("Не удалось открыть репозиторий.")
 
 public_files = ['public_push.py'] + get_public_pages()
+print(get_remote_files(
+    public_files,
+    get_old_public_files()
+))
 
 git_push(
     'Коммит первых файлов',
