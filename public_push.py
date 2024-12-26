@@ -34,12 +34,13 @@ def get_public_pages():
     return public_notes
 
 def get_assets_public(public_pages: list[str]) -> list[str]:
+    public_assets = []
     for file in public_pages:
         with open(Path(BASE_DIR, file), 'r') as f:
             for line in f.readlines():
                 if '!' in line and 'assets' in line:
-                    print(re.findall(r'assets\/[^)]+', line))
-    return []
+                    public_assets += re.findall(r'assets\/[^)]+', line)
+    return public_assets
     
 
 def git_push(commit_message: str, files_to_push: list[str]=[], files_to_remove: list[str]=[]):
