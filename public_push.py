@@ -1,4 +1,5 @@
 import os
+import re
 import json
 
 from git import Repo
@@ -37,7 +38,7 @@ def get_assets_public(public_pages: list[str]) -> list[str]:
         with open(Path(BASE_DIR, file), 'r') as f:
             for line in f.readlines():
                 if '!' in line and 'assets' in line:
-                    print(line)
+                    print(re.search(r'assets\/[^)]+', line))
     return []
     
 
