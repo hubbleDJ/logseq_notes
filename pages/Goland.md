@@ -249,7 +249,7 @@ public:: true
 			  fmt.printf("Вывод числа с двумя знаками после точки: %0.2f\n", 1.0/3.0)
 			  
 			  // Не вывод а возврат строки
-			  resultString = fmt.Srintf("Возврат числа с двумя знаками после точки: %0.2f", 1.0/3.0)
+			  resultString = fmt.Sprintf("Возврат числа с двумя знаками после точки: %0.2f", 1.0/3.0)
 			  fmt.println(resultString)
 			  ```
 			- `%0.2f` является глаголом означающем количество знаков после точки
@@ -261,9 +261,13 @@ public:: true
 		- `int(varFloat)`
 		- Из строки в Float
 		  ```go
-		  import "strconv"
+		  import (
+		    "strconv"
+		    "strings"
+		  )
 		  
 		  myStringFloat := "2.45"
+		  myStringFloat = strings.TrimSpace(myStringFloat)
 		  myFloat, err := strconv.ParseFloat(myStringFloat, 64) //64 количество битов
 		  ```
 		- Из строки в Int
@@ -454,3 +458,40 @@ public:: true
 		    fmt.Println(getValueInPointer(&myBoolVar))
 		  }
 		  ```
+- # Пакеты
+	- *Хранение кода в отдельный файлах*
+	- `Рабочая область` - директория, в которой лежит код пакетов
+	- По умолчанию `рабочая область` находится в `~/go`
+	- Иногда она создана в `/usr/local/go`
+	- Структура каталога `go`
+		- go [[$green]]==*// Каталог рабочей области*==
+			- bin [[$green]]==*// Исполняемые программы*==
+			- pkg [[$green]]==*// Откомпилированный код пакетов*==
+			- src [[$green]]==*// Исходный код*==
+				- doodad [[$green]]==*// Код пакета `doodad`*==
+				- gizmo [[$green]]==*// Код пакета `gizmo`*==
+					- gizmo.go
+					- plug.go
+	- Пример создания пакета `greeting`
+		- Создаем директорию с файлом `~/go/src/greeting.go`
+		- Добавляем код
+			- ```go
+			  // Указываем имя пакета
+			  package greeting
+			  
+			  // Нужные импорты
+			  import "fmt"
+			  
+			  /*
+			  	Функции пакета начиаются с большой буквы 
+			  	так как будут импортированы
+			  */
+			  func Hello() {
+			    fmt.Println("Hello!")
+			  }
+			  
+			  func Hi() {
+			    fmt.Println("Hi!")
+			  }
+			  ```
+		-
