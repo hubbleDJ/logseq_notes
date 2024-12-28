@@ -859,22 +859,22 @@ public:: true
   
   При анализе данных бывает удобно разбить датасет на группы близких значений. Частный случай такой задачи — поиск *островов* в данных (islands).
 - Пример создания островов значений
-  ```sql
-  with ngroups as (
-    select
-      num,
-      num - row_number() over w as group_id
-    from numbers
-    window w as (order by num)
-  )
-  select
-    min(num) as n_start,
-    max(num) as n_end,
-    count(*) as n_count
-  from ngroups
-  group by group_id;
-  ``` 
-  ![image.png](../assets/image_1725052863870_0.png){:height 335, :width 109} ![image.png](../assets/image_1725052888269_0.png){:height 320, :width 644}
+	- ```sql
+	  with ngroups as (
+	    select
+	      num,
+	      num - row_number() over w as group_id
+	    from numbers
+	    window w as (order by num)
+	  )
+	  select
+	    min(num) as n_start,
+	    max(num) as n_end,
+	    count(*) as n_count
+	  from ngroups
+	  group by group_id;
+	  ```
+	- ![image.png](../assets/image_1735379950517_0.png)
 -
 - ### **Кластеры значений**
   
