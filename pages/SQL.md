@@ -379,18 +379,18 @@ public:: true
   ```sql
   -- Подзапрос
   SELECT
-  *
+  	*
   FROM (
-  SELECT
-  *
-  FROM (
-  ...
-  )
+  	SELECT
+  		*
+  	FROM (
+  		...
+  	)
   )
   
   -- Подзапрос при join
   SELECT
-  *
+  	*
   FROM () AS table_l
   INNER JOIN () AS table_r
   USING(column_name)
@@ -404,10 +404,10 @@ public:: true
   Создание MATERIALIZED VIEW
   ```sql
   CREATE VIEW schema.table_name AS (
-  SELECT
-  *
-  FROM old_table
-  WHERE a = b
+  	SELECT
+  		*
+  	FROM old_table
+  	WHERE a = b
   )
   
   -- Писал по инструкции для Click House
@@ -415,10 +415,10 @@ public:: true
   
   ```sql
   CREATE MATERIALIZED VIEW schema.table_name ENGINE = Log POPULATE AS (
-  SELECT
-  *
-  FROM old_table
-  WHERE a = b
+  	SELECT
+  		*
+  	FROM old_table
+  	WHERE a = b
   )
   
   -- Писал по инструкции для Click House
@@ -433,8 +433,8 @@ public:: true
   (SELECT AVG(column_name) AS new_value FROM schema.table_name_1) AS new_column_with
   
   SELECT
-  column_one,
-  new_column_with
+  	column_one,
+  	new_column_with
   FROM schema.table_name_2
   ```
   
@@ -444,18 +444,19 @@ public:: true
   column_old * 0.87 AS new_column_with
   
   SELECT
-  column_old,
-  new_column_with
+  	column_old,
+  	new_column_with
   FROM schema.table_name
   ```
   
   Добавляем свою колонку со значением
   ```sql
   WITH
-  'my text' as new_column_with
+  	'my text' as new_column_with
+   
   SELECT
-  column_one,
-  new_column_with
+  	column_one,
+  	new_column_with
   FROM schema.table_name
   ```
   
@@ -464,8 +465,8 @@ public:: true
   Создание пустой таблицы Click House
   ```sql
   CREATE TABLE users (
-  Id UInt32,
-  name String
+  	Id UInt32,
+  	name String
   ) ENGINE = Log
   ```
   
@@ -476,9 +477,9 @@ public:: true
   
   ```sql
   CREATE TABLE users AS ENGINE = Log (
-  SELECT
-  *
-  FROM old_table
+  	SELECT
+  		*
+  	FROM old_table
   )
   ```
   
@@ -491,7 +492,7 @@ public:: true
     column_2 UInt32,
     column_3 DateTime('Europe/Moscow'),
     column_4 String
-  ) 
+  )
   
   ENGINE = MergeTree -- движок
   ORDER BY (column_1, column_2)
@@ -756,9 +757,12 @@ public:: true
 -
 - NO THERS
 	- ![image.png](../assets/image_1725052640965_0.png){:height 267, :width 252}
-- ![image.png](../assets/image_1725052668703_0.png){:height 313, :width 278} CURRENT ROW
-- ![image.png](../assets/image_1725052694641_0.png){:height 320, :width 280} GROUPS
-- ![image.png](../assets/image_1725052726705_0.png){:height 306, :width 289} TIES
+- CURRENT ROW
+	- ![image.png](../assets/image_1725052668703_0.png){:height 313, :width 278}
+- GROUPS
+	- ![image.png](../assets/image_1725052694641_0.png){:height 320, :width 280}
+- TIES
+	- ![image.png](../assets/image_1725052726705_0.png){:height 306, :width 289}
 -
 - ## FILTER
   
