@@ -755,7 +755,7 @@ public:: true
 - `EXCLUDE TIES`. Оставить текущую запись, но исключить равные ей.
 -
 - NO THERS
-	- ![image.png](../assets/image_1725052640965_0.png){:height 296, :width 275}
+	- ![image.png](../assets/image_1725052640965_0.png){:height 267, :width 252}
 - ![image.png](../assets/image_1725052668703_0.png){:height 313, :width 278} CURRENT ROW
 - ![image.png](../assets/image_1725052694641_0.png){:height 320, :width 280} GROUPS
 - ![image.png](../assets/image_1725052726705_0.png){:height 306, :width 289} TIES
