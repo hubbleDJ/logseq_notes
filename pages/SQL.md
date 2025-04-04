@@ -260,11 +260,6 @@ public:: true
 - ### String
   
   `String` – тип данных для хранения строк произвольной длины.
-  
-  Методы
-- |Метод|Описание|
-  |--|--|
-  |replaceAll(column_name, ‘old_substring’, ‘new_substring’)|Заменяет подстроку|
 - ### Date, datetime и interval
   
   Преобразовать колонку в формат даты
@@ -281,6 +276,8 @@ public:: true
   |yesterday()|Получить вчерашнюю дату|
   |dateDiff(’type_diff’, date_1, date_2)|Разница между датами|
   |toDateOrNull(column_name)|Вернет null в случае отсутствия значения|
+  |replaceAll(column_name, ‘old_substring’, ‘new_substring’)|Заменяет подстроку|
+-
 - Пример интервала
   ```sql
   SELECT

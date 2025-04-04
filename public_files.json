@@ -1,6 +1,7 @@
 [
     "public_push.py",
     "public_files.json",
+    "pages/Golang.md",
     "pages/Настройка нового сервера.md",
     "pages/Vim.md",
     "pages/Python.md",
@@ -12,12 +13,16 @@
     "pages/Статистика и анализ данных.md",
     "pages/Supervisor для телеграм бота.md",
     "pages/Pandas.md",
+    "pages/Заведения.md",
     "pages/Google doc API.md",
     "pages/Регулярки.md",
     "pages/Hadoop.md",
-    "pages/Goland.md",
     "pages/Tmux.md",
     "pages/Bash.md",
+    "assets/image_1740688435961_0.png",
+    "assets/image_1733590085431_0.png",
+    "assets/image_1741289618817_0.png",
+    "assets/image_1743103912783_0.png",
     "assets/image_1730213115226_0.png",
     "assets/image_1730213226092_0.png",
     "assets/image_1725049674222_0.png",
@@ -109,6 +114,5 @@
     "assets/image_1727027170691_0.png",
     "assets/image_1727027177352_0.png",
     "assets/image_1727027235818_0.png",
-    "assets/image_1727027243473_0.png",
-    "assets/image_1733590085431_0.png"
+    "assets/image_1727027243473_0.png"
 ]
